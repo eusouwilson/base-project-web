@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "concurrently -r \"yarn lint\" \"yarn tsc --noEmit\"",
+    "post-merge": "yarn"
+  }
+}
