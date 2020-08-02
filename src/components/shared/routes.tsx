@@ -6,7 +6,7 @@ export default function RouterWrapper({
   component: Component,
   ...rest
 }: any) {
-  const signed = false;
+  const signed = true;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" exact={true} />;

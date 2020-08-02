@@ -1,13 +1,18 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
 import './App.css';
-import Pages from 'components/pages';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import DrawerMenu from 'components/layout/drawer';
+
+import history from 'services/history';
 
 function App() {
   return (
     <>
-      <CssBaseline />
-      <Pages />
+      <Router history={history}>
+        <CssBaseline />
+        <DrawerMenu />
+      </Router>
     </>
   );
 }

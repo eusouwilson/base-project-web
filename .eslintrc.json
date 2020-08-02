@@ -73,7 +73,7 @@
     "no-return-await": ["error"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-no-bind": "error",
+    // "react/jsx-no-bind": "error",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/adjacent-overload-signatures": ["error"],
 
