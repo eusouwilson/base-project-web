@@ -1,12 +1,12 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-const AdminPage: React.FC = () => {
+const SignIn: React.FC = () => {
   return (
     <Typography variant="h1" noWrap>
-      rotas Admin
+      tela de LoginPage
     </Typography>
   );
 };
 
-export default AdminPage;
+export default SignIn;

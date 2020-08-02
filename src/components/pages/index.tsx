@@ -1,14 +1,23 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 
-const Pages: React.FC = () => {
+import { Switch, BrowserRouter } from 'react-router-dom';
+import Route from '../shared/routes';
+
+import SignIn from './public/signin';
+import AdminPage from './admin';
+import PublicPage from './public';
+import RouteError from 'errors/routeError';
+
+export default function Routes() {
   return (
-    <div>
-      <Typography variant="h1" noWrap>
-        Vamos começar
-      </Typography>
-    </div>
-  );
-};
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact={true} component={SignIn} />
+        <Route path="/admin" component={AdminPage} isPrivate />
+        <Route path="/public" component={PublicPage} isPrivate />
 
-export default Pages;
+        <Route path="/" component={RouteError} />
+      </Switch>
+    </BrowserRouter>
+  );
+}

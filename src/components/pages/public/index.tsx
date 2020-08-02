@@ -1,12 +1,12 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-const AdminPage: React.FC = () => {
+const PublicPage: React.FC = () => {
   return (
     <Typography variant="h1" noWrap>
-      rotas Admin
+      rotas public
     </Typography>
   );
 };
 
-export default AdminPage;
+export default PublicPage;
