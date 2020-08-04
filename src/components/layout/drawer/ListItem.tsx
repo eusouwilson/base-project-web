@@ -12,10 +12,11 @@ interface ListItemLinkProps {
   icon?: React.ReactElement;
   primary: string;
   to: string;
+  key: string;
 }
 
 const ListItemLink = (props: ListItemLinkProps) => {
-  const { icon, primary, to } = props;
+  const { icon, primary, to, key } = props;
 
   const renderLink = React.useMemo(
     () =>
@@ -24,9 +25,8 @@ const ListItemLink = (props: ListItemLinkProps) => {
       )),
     [to],
   );
-
   return (
-    <ListItem button component={renderLink}>
+    <ListItem key={key} button component={renderLink}>
       {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
       <ListItemText primary={primary} />
     </ListItem>

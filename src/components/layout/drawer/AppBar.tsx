@@ -38,13 +38,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 interface Iprops {
-  handleopen(): void;
+  handleOpen(): void;
   open: boolean;
 }
 
 const AppBarLink = (props: Iprops) => {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar
@@ -57,7 +56,7 @@ const AppBarLink = (props: Iprops) => {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={props.handleopen}
+            onClick={props.handleOpen}
             edge="start"
             className={clsx(classes.menuButton, {
               [classes.hide]: props.open,

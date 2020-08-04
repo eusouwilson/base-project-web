@@ -13,11 +13,9 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-
+import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplications';
 import ListItemLink from './ListItem';
 import AppBarLink from './AppBar';
-import Pages from 'components/pages';
 
 const drawerWidth = 240;
 
@@ -64,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function DrawerMenu() {
+const DrawerMenu: React.FC = ({ children }) => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -79,7 +77,7 @@ function DrawerMenu() {
 
   return (
     <div className={classes.root}>
-      <AppBarLink handleopen={handleDrawerOpen} open={open} />
+      <AppBarLink handleOpen={handleDrawerOpen} open={open} />
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -108,17 +106,23 @@ function DrawerMenu() {
             to="/public"
             primary="Usuários"
             icon={<AccountBoxIcon />}
+            key="1"
           />
-          <ListItemLink to="/admin" primary="Admin" icon={<InboxIcon />} />
+          <ListItemLink
+            to="/admin"
+            primary="Configurações"
+            icon={<SettingsApplicationsIcon />}
+            key="2"
+          />
         </List>
         <Divider />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Pages />
+        {children}
       </main>
     </div>
   );
-}
+};
 
 export default DrawerMenu;

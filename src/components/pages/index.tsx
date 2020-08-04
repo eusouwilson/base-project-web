@@ -1,23 +1,26 @@
 import React from 'react';
 
 import { Switch, BrowserRouter } from 'react-router-dom';
-import Route from '../shared/routes';
+import CustomRoute from '../shared/routes';
 
 import SignIn from './public/signin';
 import AdminPage from './admin';
 import PublicPage from './public';
 import RouteError from 'errors/routeError';
 
-export default function Routes() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={SignIn} />
-        <Route path="/admin" component={AdminPage} isPrivate />
-        <Route path="/public" component={PublicPage} isPrivate />
+class Routes extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <CustomRoute path="/" exact component={SignIn} />
+          <CustomRoute path="/admin" component={AdminPage} isPrivate />
+          <CustomRoute path="/public" component={PublicPage} isPrivate />
 
-        <Route path="/" component={RouteError} />
-      </Switch>
-    </BrowserRouter>
-  );
+          <CustomRoute path="/" component={RouteError} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
+export default Routes;

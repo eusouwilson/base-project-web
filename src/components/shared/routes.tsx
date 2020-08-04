@@ -7,7 +7,6 @@ export default function RouterWrapper({
   ...rest
 }: any) {
   const signed = true;
-
   if (!signed && isPrivate) {
     return <Redirect to="/" exact={true} />;
   }
