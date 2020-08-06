@@ -6,15 +6,19 @@ import DrawerMenu from 'components/layout/drawer';
 import Routes from 'components/pages';
 
 import history from 'services/history';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <CssBaseline />
-        <DrawerMenu>
-          <Routes />
-        </DrawerMenu>
+        <BrowserRouter>
+          <CssBaseline />
+
+          <DrawerMenu>
+            <Routes />
+          </DrawerMenu>
+        </BrowserRouter>
       </Router>
     );
   }
